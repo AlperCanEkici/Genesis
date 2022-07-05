@@ -13,7 +13,7 @@ contract SimpleStorage {
         favoriteNumber = _favoriteNumber;
     }
 
- //Kullanıcıları listelemek için tek tek yazmak yerine bunu kullabiliriz! Arrays! []
+ //We can use these to inject the data inside our users of storage. Arrays! []
 
     People[] public peoplelist;
 
@@ -30,7 +30,7 @@ contract SimpleStorage {
         return favoriteNumber;
     }   
 
-    //Sözleşmeye "addPerson" ile kişi eklediğimizde bu data aynı zamanda peoplelist ve searching'e de aktarılacak!
+    //Under the "addPerson" function, with each added data, our peoplelist array and favorite number mapping is getting data as well!
     function addPerson(uint256  _favoriteNumber, string memory _name) public {
         peoplelist.push(People(_favoriteNumber, _name));
         searching[_name] = _favoriteNumber;
